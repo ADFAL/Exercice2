@@ -1,15 +1,15 @@
 # Master Git - Menu
 
-## Setting Up
+## [Setting Up](Tache_1.md)
 
-## Inspection
+## [Inspection](Tache_2.md)
 
-## Saving changes
+## [Saving changes](Tache_3.md)
 
-## Working with branches
+## [Working with branches](Tache_4.md)
 
-## Undoing changes
+## [Undoing changes](Tache_5.md)
 
-## Collaborating
+## [Collaborating](Tache_6.md)
 
-## Miscellaneous
+## [Miscellaneous](Tache_7.md)
