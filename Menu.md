@@ -1,15 +1,16 @@
-# Master Git - Menu
+# <p align="center"> Master Git <img src='/Git_icon.png' style='width:45px;height:45px;margin-bottom:-10px'> - Menu 📋 </p>
+<br>
+  
+> ## ⚫<p align="center">  [Setting Up](Tache_1.md) </p>
 
-## [Setting Up](Tache_1.md)
+> ## ⚫<p align="center">   [Inspection](Tache_2.md) </p>
 
-## [Inspection](Tache_2.md)
+> ## ⚫<p align="center">   [Saving changes](Tache_3.md) </p>
 
-## [Saving changes](Tache_3.md)
+> ## ⚫<p align="center">   [Working with branches](Tache_4.md) </p>
 
-## [Working with branches](Tache_4.md)
+> ## ⚫<p align="center">   [Undoing changes](Tache_5.md) </p>
 
-## [Undoing changes](Tache_5.md)
+> ## ⚫<p align="center">   [Collaborating](Tache_6.md) </p>
 
-## [Collaborating](Tache_6.md)
-
-## [Miscellaneous](Tache_7.md)
+> ## ⚫<p align="center">   [Miscellaneous](Tache_7.md) </p>
