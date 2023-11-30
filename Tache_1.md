@@ -60,3 +60,21 @@
     - **Etap 4 :**
         - Revenez à la ligne de commande bash et copiez l'URL
             ![11](Images/11.png)
+
+
+## Sauvegarde des modifications dans le référentiel : git add et git commit :
+
+![12](Images/12.png)
+
+- Premier command git add :
+    - git add ➡ Ajouter un nouveau fichier à votre zone (**Staging area**)
+    - **``git add <nom de fichier.type>``** ou **``git add .``** :
+
+        ![13](Images/13.png)
+    
+
+- Deuxième  command git add :
+    - git commit ➡ Ajoute des modifications par étapes à votre local (**Repository**)
+    - **``git commit -m "Écrire un commit"``** ou **``git commit -m "Écrire un commit" <nom de fichier.type>``** :
+        ![13](Images/14.png)
+        
