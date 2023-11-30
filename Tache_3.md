@@ -89,3 +89,18 @@ Cet exemple présente l'opérateur point. Les deux points dans cet exemple indiq
     git diff branch1...other-feature-branch
 ```
 L'opérateur à trois points lance la comparaison en modifiant le premier paramètre d'entrée ``branch1``. Il transforme ``branch1`` en une référence de la validation d'ancêtre commun partagée entre les deux entrées de différence, l'ancêtre partagé de ``branch1`` et d'une autre branche de fonctionnalité. Le dernier paramètre d'entrée reste inchangé en tant que pointe de l'autre branche de fonctionnalité.
+
+## Git ignore
+
+Les fichiers ignorés sont généralement des artefacts de construction et des fichiers générés par la machine qui peuvent être dérivés de la source de votre référentiel ou qui ne devraient pas être validés.
+
+## Git ignore les modèles
+
+``.gitignore`` utilise des modèles de globalisation pour correspondre aux noms de fichiers. Vous pouvez construire vos motifs à l'aide de différents symboles :
+
+|Modèle|Exemples de correspondances|Explication*|
+|-|-|-|
+|`**/logs`|`logs/debug.log`<br>`logs/monday/foo.bar`<br>`build/logs/debug.log`|Vous pouvez préfixer un modèle avec un double astérisque pour qu'il corresponde aux répertoires partout dans le dépôt.|
+|
+|`.log`|`debug.log`<br>`foo.log`<br>`.log`<br>`logs/debug.log`|Un astérisque est un caractère générique qui correspond à zéro caractère ou plus.|
+
