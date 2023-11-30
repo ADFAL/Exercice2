@@ -59,3 +59,47 @@ C'est une bonne pratique de vérifier l'état de votre référentiel avant de va
 ```
 
 La première sortie d'état affichera le fichier comme non préparé. L'action ``git add`` sera reflétée dans le deuxième ``git status``, et la sortie d'état finale vous indiquera qu'il n'y a rien à valider — le répertoire de travail correspond à la validation la plus récente. Certaines commandes Git (par exemple ``git merge``) nécessitent que le répertoire de travail soit propre afin que vous n'écrasiez pas accidentellement les modifications.
+
+
+## git log
+La commande ``git log`` affiche les instantanés validés. Il vous permet de répertorier l'historique du projet, de le filtrer et de rechercher des modifications spécifiques. Alors que ``git status`` vous permet d'inspecter le répertoire de travail et la zone de transit, ``git log`` ne fonctionne que sur l'historique validé.
+![1](Images/01.svg){width=500 heigth=500}
+La sortie du journal peut être personnalisée de plusieurs manières, du simple filtrage des validations à leur affichage dans un format entièrement défini par l'utilisateur. Certaines des configurations les plus courantes de `git log` sont présentées ci-dessous.
+## Usage
+```bash
+    git log
+```
+Affichez l'intégralité de l'historique des validations en utilisant le formatage par défaut. Si la sortie occupe plus d’un écran, vous pouvez utiliser `Espace` pour faire défiler et `q` pour quitter.
+```bash
+    git log -n <limit>
+```
+Limitez le nombre de commits par . Par exemple, ``git log -n 3`` affichera seulement 3 commits.
+
+Condensez chaque commit sur une seule ligne. Ceci est utile pour obtenir un aperçu de haut niveau de l’historique du projet.
+```bash
+    git log --oneline
+```
+```bash
+    git log --stat
+```
+En plus des informations ordinaires du ``git log``, indiquez quels fichiers ont été modifiés et le nombre relatif de lignes qui ont été ajoutées ou supprimées de chacun d'eux.
+```bash
+    git log -p
+```
+Affichez le patch représentant chaque commit. Cela montre la différence complète de chaque commit, ce qui constitue la vue la plus détaillée que vous puissiez avoir de l'historique de votre projet.
+```bash
+    git log --author="<pattern>"
+```
+Recherchez les commits d'un auteur particulier. L'argument ``＜pattern＞`` peut être une chaîne simple ou une expression régulière.
+```bash
+    git log <since>..<until>
+```
+Afficher uniquement les commits qui se produisent entre ``< depuis >`` et ``< jusqu'à >``. Les deux arguments peuvent être soit un identifiant de commit, soit un nom de branche, ``HEAD``
+```bash
+    git log <file>
+```
+Afficher uniquement les commits qui incluent le fichier spécifié. C'est un moyen simple de voir l'historique d'un fichier particulier.
+```bash
+    git log --graph --decorate --oneline
+```
+Quelques options utiles à considérer. L'indicateur --graph qui dessinera un graphique textuel des validations sur le côté gauche des messages de validation. --decorate ajoute les noms des branches ou des balises des commits affichés. --oneline affiche les informations de validation sur une seule ligne, ce qui facilite la navigation parmi les validations d'un seul coup d'œil.
