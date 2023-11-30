@@ -25,7 +25,7 @@ Merging is Git's way of putting a forked history back together again. The ``git 
 
 Note that all of the commands presented below merge into the current branch. The current branch will be updated to reflect the merge, but the target branch will be completely unaffected. Again, this means that git merge is often used in conjunction with ``git checkout`` for selecting the current branch and ``git branch -d`` for deleting the obsolete target branch.
 
-### 🚩How it works
+>### 🚩How it works
 ``Git merge`` will combine multiple sequences of commits into one unified history. In the most frequent use cases, ``git merge`` is used to combine two branches. The following examples in this document will focus on this branch merging pattern. In these scenarios, ``git merge`` takes two commit pointers, usually the branch tips, and will find a common base commit between them. Once Git finds a common base commit it will create a new "merge commit" that combines the changes of each queued merge commit sequence.
 
 Say we have a new branch feature that is based off the main branch. We now want to merge this feature branch into ``main``.
@@ -37,4 +37,42 @@ Invoking this command will merge the specified branch feature into the current b
 Merge commits are unique against other commits in the fact that they have two parent commits. When creating a merge commit Git will attempt to auto magically merge the separate histories for you. If Git encounters a piece of data that is changed in both histories it will be unable to automatically combine them. This scenario is a version control conflict and Git will need user intervention to continue. 
 
 ***************
+>##  3.forking:
+Forking workflow
+The Forking Workflow is fundamentally different than other popular Git workflows. Instead of using a single server-side repository to act as the “central” codebase, it gives every developer their own server-side repository. This means that each contributor has not one, but two Git repositories: a private local one and a public server-side one. The Forking Workflow is most often seen in public open source projects.
 
+![1](Images/forking1.png)
+
+The main advantage of the Forking Workflow is that contributions can be integrated without the need for everybody to push to a single central repository. Developers push to their own server-side repositories, and only the project maintainer can push to the official repository. This allows the maintainer to accept commits from any developer without giving them write access to the official codebase.
+
+The Forking Workflow typically follows a branching model based on the Gitflow Workflow. This means that complete feature branches will be purposed for merge into the original project maintainer's repository. The result is a distributed workflow that provides a flexible way for large, organic teams (including untrusted third-parties) to collaborate securely. This also makes it an ideal workflow for open source projects.  
+
+>### 🏌️How it works :
+As in the other Git workflows, the Forking Workflow begins with an official public repository stored on a server. But when a new developer wants to start working on the project, they do not directly clone the official repository.
+
+Instead, they fork the official repository to create a copy of it on the server. This new copy serves as their personal public repository—no other developers are allowed to push to it, but they can pull changes from it (we’ll see why this is important in a moment). After they have created their server-side copy, the developer performs a git clone to get a copy of it onto their local machine. This serves as their private development environment, just like in the other workflows.
+
+When they're ready to publish a local commit, they push the commit to their own public repository—not the official one. Then, they file a pull request with the main repository, which lets the project maintainer know that an update is ready to be integrated. The pull request also serves as a convenient discussion thread if there are issues with the contributed code. The following is a step-by-step example of this workflow.
+1. A developer 'forks' an 'official' server-side repository. This creates their own server-side copy.
+
+2. The new server-side copy is cloned to their local system.
+
+3. A Git remote path for the 'official' repository is added to the local clone.
+
+4. A new local feature branch is created.
+
+5. The developer makes changes on the new branch.
+
+6. New commits are created for the changes.
+
+7. The branch gets pushed to the developer's own server-side copy.
+
+8. The developer opens a pull request from the new branch to the 'official' repository.
+
+9. The pull request gets approved for merge and is merged into the original server-side repository
+
+>see the other page :
+ #### <p align="center">   [Miscellaneous](Tache_7.md) </p>
+<p align="center" > With All that : ❤️</p>
+
+****************
