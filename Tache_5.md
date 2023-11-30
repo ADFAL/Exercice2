@@ -87,7 +87,19 @@ Here we have executed a "hard reset" using the  ``--hard  ``option. Git displays
 
 
 Here we have executed a "mixed reset". To reiterate, ``--mixed`` is the default mode and the same effect as executing ``git reset``. Examining the output from ``git status`` and ``git ls-files``, shows that the Staging Index has been reset to a state where ``reset_lifecycle_file`` is the only file in the index. The object SHA for ``reset_lifecycle_file`` has been reset to the previous version.
+### <p>c.--soft</p>
+![2](/Images/git-reset.png)
 
+When the ``--soft argument`` is passed, the ref pointers are updated and the reset stops there. The Staging Index and the Working Directory are left untouched. This behavior can be hard to clearly demonstrate. Let's continue with our demo repo and prepare it for a soft reset.
+
+![2](/Images/soft.png)
+
+The code above executes a "soft reset" and also invokes the ``git status``and ``git ls-files ``combo command, which outputs the state of the repository. We can examine the repo state output and note some interesting observations. First, git status indicates there are modifications to ``reset_lifecycle_file`` and highlights them indicating they are changes staged for the next commit. Second, the ``git ls-files`` output indicates that the Staging Index has not changed and retains the SHA 67cc52710639e5da6b515416fd779d0741e3762e we had earlier.
+
+
+>see the other page :
+ #### <p align="center">   [Collaborating](Tache_6.md) </p>
+<p align="center" > Ismail Dakir with : ❤️</p>
 
 
 
