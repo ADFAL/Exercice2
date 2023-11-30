@@ -10,3 +10,32 @@ Une branche représente une ligne de développement indépendante. Les branches 
 
 La commande ``git branch`` vous permet de créer, lister, renommer et supprimer des branches. Il ne vous permet pas de basculer entre les branches ou de reconstituer un historique bifurqué. Pour cette raison, ``git branch`` est étroitement intégré aux commandes ``git checkout`` et ``git merge``.
 
+
+## Options communes
+
+```bash
+    git branch
+```
+Permet de répertorier toutes les branches de votre dépôt. Cette commande est synonyme de git ``branch --list``.
+```bash
+    git branch <branch>
+```
+Permet de créer une branche nommée ``＜branch＞``. Cette opération ne permet pas de faire un check-out de la nouvelle branche.
+```bash
+    git branch -d <branch>
+```
+Supprimez la branche spécifiée. Ceci est une opération « sûre » dans la mesure où Git vous empêche de supprimer la branche lorsqu'elle contient des changements non mergés.
+
+```bash
+    git branch -D <branch>
+```
+Forcez la suppression de la branche spécifiée, même lorsqu'elle contient des changements non mergés. C'est la commande à utiliser si vous souhaitez supprimer définitivement tous les commits associés à une ligne de développement spécifique.
+
+```bash
+    git branch -m <branch>
+```
+Permet de renommer la branche actuelle en ``＜branch＞``.
+```bash
+    git branch -a
+```
+Permet de répertorier toutes les branches distantes.
