@@ -62,3 +62,30 @@ Une commande de raccourci utilisateur expérimenté qui combine les options`` -a
     git commit --amend
 ```
 Cette option ajoute un autre niveau de fonctionnalité à la commande commit. Passer cette option modifiera le dernier commit. Au lieu de créer une nouvelle validation, les modifications échelonnées seront ajoutées à la validation précédente. Cette commande ouvrira l'éditeur de texte configuré du système et vous invitera à modifier le message de validation précédemment spécifié.
+
+
+## Git diff
+
+La différence est une fonction qui prend deux ensembles de données d'entrée et génère les modifications entre eux. ``git diff`` est une commande Git multi-usage qui, une fois exécutée, exécute une fonction diff sur les sources de données Git. Ces sources de données peuvent être des commits, des branches, des fichiers et bien plus encore. Ce document discutera des invocations courantes de ``git diff`` et des différents modèles de flux de travail. La commande ``git diff`` est souvent utilisée avec ``git status`` et ``git log`` pour analyser l'état actuel d'un dépôt Git.
+
+## Comparer tous les changements
+Invoquer ``git diff`` sans chemin de fichier comparera les modifications dans l'ensemble du référentiel. Les exemples spécifiques aux fichiers ci-dessus peuvent être invoqués sans l'argument ``./path/to/file`` et ont les mêmes résultats de sortie dans tous les fichiers du dépôt local.
+
+## Modifications depuis le dernier commit
+Par défaut, ``git diff`` vous montrera toutes les modifications non validées depuis la dernière validation.
+```bash
+    git diff
+```
+
+## Comparaison des succursales
+**Comparer deux branches**
+Les branches sont comparées comme toutes les autres entrées de référence à ``git diff``
+
+```bash
+    git diff branch1..other-feature-branch
+```
+Cet exemple présente l'opérateur point. Les deux points dans cet exemple indiquent que l'entrée diff correspond aux extrémités des deux branches. Le même effet se produit si les points sont omis et qu’un espace est utilisé entre les branches. De plus, il existe un opérateur à trois points :
+```bash
+    git diff branch1...other-feature-branch
+```
+L'opérateur à trois points lance la comparaison en modifiant le premier paramètre d'entrée ``branch1``. Il transforme ``branch1`` en une référence de la validation d'ancêtre commun partagée entre les deux entrées de différence, l'ancêtre partagé de ``branch1`` et d'une autre branche de fonctionnalité. Le dernier paramètre d'entrée reste inchangé en tant que pointe de l'autre branche de fonctionnalité.
