@@ -40,4 +40,23 @@
 
             > Tous les fichiers cachés sont affichés : 
 
-            ![5](Images/7.png)
+            ![7](Images/7.png)
+
+
+
+## Cloner un dépôt existant : git clone:
+- **``git clone``** est utilisé pour créer une copie ou un clone de référentiels distants. Vous transmettez à git clone une **URL** de référentiel.
+    - **Etap 1 :** 
+        - Tapez la commande suivante : **``git clone <repo url>``**
+
+            ![8](Images/8.png)
+    - **Etap 2 :** 
+        - Accédez aux référentiels et cliquez sur l'icône du bouton **(<>code)**
+
+            ![9](Images/9.png)
+    - **Etap 3 :**
+        - Copier le lien **URL**
+            ![10](Images/10.png)
+    - **Etap 4 :**
+        - Revenez à la ligne de commande bash et copiez l'URL
+            ![11](Images/11.png)
