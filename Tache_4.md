@@ -71,3 +71,41 @@ Jusqu'à présent, nos exemples illustraient tous des opérations sur une branch
 ```
 
 Cette commande fait un push d'une copie de la branche locale ``crazy-experiment`` vers le dépôt distant ``＜remote＞``.
+
+
+
+
+## 🗑 Suppression de branches 
+
+Lorsque vous avez terminé de travailler sur une branche et que vous l'avez mergée dans la base de code principale, vous pouvez la supprimer sans perdre l'historique :
+
+```bash
+    git branch -d crazy-experiment
+```
+
+Toutefois, si la branche n'a pas été mergée, la commande ci-dessus émettra un message d'erreur :
+
+```bash
+    error: The branch 'crazy-experiment' is not fully merged. If you are sure you want to delete it, run 'git branch -D crazy-experiment'.
+```
+
+Vous évitez ainsi de perdre votre accès à toute cette ligne de développement. Si vous souhaitez réellement supprimer la branche (p. ex., en cas d'expérience ratée), utilisez le flag ``-D`` en majuscules :
+
+```bash
+    git branch -D crazy-experiment
+```
+
+Cette opération supprime la branche, quel que soit son état, et sans avertissement. Par conséquent, utilisez-la avec précaution.
+
+La commande précédente supprime une copie locale d'une branche. La branche peut continuer d'exister dans des dépôts distants. Pour supprimer une branche distante, exécutez la commande suivante
+
+```bash
+    git push origin --delete crazy-experiment
+```
+ou
+```bash
+    git push origin :crazy-experiment
+```
+
+Cette commande fait un push d'un signal de suppression vers le dépôt origin distant, ce qui déclenche la suppression de la branche ``crazy-experiment``.
+
