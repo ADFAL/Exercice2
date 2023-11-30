@@ -87,7 +87,7 @@
 
 + Bien sûr, rien ne vous empêche de donner une signification particulière à certains dépôts Git. Par exemple, en désignant simplement un dépôt Git comme dépôt « central », il est possible de répliquer un flux de travail centralisé à l’aide de Git. Ceci est accompli par le biais de conventions plutôt que d'être câblé dans le VCS lui-même.
 
-## Configuration & set up: git config 
+## Configuration et installation : git config
 
 Une fois que vous avez configuré une mise en pension à distance, vous devrez ajouter une URL de dépôt distant à votre local ``git config`` et définir une branche en amont pour vos succursales locales. La commande ``git remote`` offre un tel utilitaire.
 ````bash
@@ -100,3 +100,33 @@ Cette commande mappera le référentiel distant à ``<remote repo url>`` à une 
 
 En plus de configurer une URL de dépôt distant, vous devrez peut-être également définir des options de configuration globales de Git telles que le nom d'utilisateur ou l'adresse e-mail. La commande ``git config`` vous permet de configurer votre installation Git (ou un référentiel individuel) à partir de la ligne de commande. Cette commande peut tout définir, des informations utilisateur aux préférences en passant par le comportement d'un référentiel. Plusieurs options de configuration courantes sont répertoriées ci-dessous.<br>
 Git stocke les options de configuration dans trois fichiers distincts, ce qui vous permet d'étendre les options à des référentiels individuels (local), à un utilisateur (global) ou à l'ensemble du système (système) :
+
+- Local: ``/.git/config`` – Repository-specific settings.
+- Global: ``/.gitconfig`` – User-specific settings. This is where options set with the --global flag are stored.
+- System: ``$(prefix)/etc/gitconfig`` – System-wide settings.
+
+L'ajout de l'option `--local` ou le fait de ne pas transmettre du tout une option de niveau de configuration définira le `user.name` ou `user.email` pour le référentiel local actuel.
+```bash
+    git config --local user.name <name>
+```
+```bash
+    git config --local user.email <email>
+```
+
+
+
+Définissez le nom de l'auteur ou email à utiliser pour tous les commits dans le référentiel actuel. En règle générale, vous souhaiterez utiliser l' ``--global``indicateur pour définir les options de configuration pour l'utilisateur actuel.
+
+````bash
+    git config --global user.name <name>
+````
+````bash
+    git config --global user.email <email>
+````
+
+
+Ouvrez le fichier de configuration globale dans un éditeur de texte pour une édition manuelle. Un guide détaillé sur la façon de configurer un éditeur de texte à utiliser par Git peut être trouvé sur lePage de configuration Git
+
+````bash
+    git config --global --edit
+````
