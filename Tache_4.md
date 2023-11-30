@@ -39,3 +39,21 @@ Permet de renommer la branche actuelle en ``＜branch＞``.
     git branch -a
 ```
 Permet de répertorier toutes les branches distantes.
+
+
+## Créer des branches
+
+Il est important de comprendre que les branches sont juste des pointeurs vers des commits. Lorsque vous créez une branche, Git doit simplement créer un nouveau pointeur, il ne modifie le dépôt d'aucune manière. Donc, si vous commencez avec un dépôt qui ressemble à ceci :
+
+![](Images/3.svg){width=500 height=300}
+
+Ensuite, créez une branche avec la commande suivante :
+
+```bash
+    git branch crazy-experiment
+```
+L'historique du dépôt ne change pas. Vous obtenez simplement un nouveau pointeur vers le commit actuel :
+
+![](Images/4.svg){width=500 height=300}
+
+Remarque : cette commande permet uniquement de créer la branche. Pour y ajouter des commits, vous devez la sélectionner avec ``git checkout``, puis exécuter les commandes ``git add`` et ``git commit`` standard.
