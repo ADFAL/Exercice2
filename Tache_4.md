@@ -57,3 +57,17 @@ L'historique du dépôt ne change pas. Vous obtenez simplement un nouveau pointe
 ![](Images/4.svg){width=500 height=300}
 
 Remarque : cette commande permet uniquement de créer la branche. Pour y ajouter des commits, vous devez la sélectionner avec ``git checkout``, puis exécuter les commandes ``git add`` et ``git commit`` standard.
+
+
+## Création de branches distantes
+
+Jusqu'à présent, nos exemples illustraient tous des opérations sur une branche locale. La commande ``git branch`` fonctionne également sur les branches distantes. Afin d'utiliser des branches distantes, vous devez d'abord configurer un dépôt distant et l'ajouter à la configuration du dépôt local.
+
+```bash
+    $ git remote add new-remote-repo https://bitbucket.com/user/repo.git
+    # Add remote repo to local repo config
+    $ git push <new-remote-repo> crazy-experiment~
+    # pushes the crazy-experiment branch to new-remote-repo
+```
+
+Cette commande fait un push d'une copie de la branche locale ``crazy-experiment`` vers le dépôt distant ``＜remote＞``.
