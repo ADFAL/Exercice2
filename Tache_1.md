@@ -78,3 +78,25 @@
     - **``git commit -m "Écrire un commit"``** ou **``git commit -m "Écrire un commit" <nom de fichier.type>``** :
         ![13](Images/14.png)
         
+
+## Collaboration de dépôt à dépôt : git push
+
++ Il est important de comprendre que l’idée de « copie de travail » de Git est très différente de la copie de travail que vous obtenez en extrayant le code source d’un référentiel SVN. Contrairement à SVN, Git ne fait aucune distinction entre les copies de travail et le référentiel central : ce sont tous des référentiels Git à part entière.
+
++ Il est important de comprendre que l’idée de « copie de travail » de Git est très différente de la copie de travail que vous obtenez en extrayant le code source d’un référentiel SVN. Contrairement à SVN, Git ne fait aucune distinction entre les copies de travail et le référentiel central : ce sont tous des référentiels Git à part entière.
+
++ Bien sûr, rien ne vous empêche de donner une signification particulière à certains dépôts Git. Par exemple, en désignant simplement un dépôt Git comme dépôt « central », il est possible de répliquer un flux de travail centralisé à l’aide de Git. Ceci est accompli par le biais de conventions plutôt que d'être câblé dans le VCS lui-même.
+
+## Configuration & set up: git config 
+
+Une fois que vous avez configuré une mise en pension à distance, vous devrez ajouter une URL de dépôt distant à votre local ``git config`` et définir une branche en amont pour vos succursales locales. La commande ``git remote`` offre un tel utilitaire.
+````bash
+    git remote add <remote_name> <remote_repo_url>  
+````
+Cette commande mappera le référentiel distant à ``<remote repo url>`` à une référence dans votre dépôt local sous ``<remote_name>``. Une fois que vous avez mappé le dépôt distant, vous pouvez y envoyer des branches locales.
+````bash
+    git push -u <remote_name> <local_branch_name> 
+````
+
+En plus de configurer une URL de dépôt distant, vous devrez peut-être également définir des options de configuration globales de Git telles que le nom d'utilisateur ou l'adresse e-mail. La commande ``git config`` vous permet de configurer votre installation Git (ou un référentiel individuel) à partir de la ligne de commande. Cette commande peut tout définir, des informations utilisateur aux préférences en passant par le comportement d'un référentiel. Plusieurs options de configuration courantes sont répertoriées ci-dessous.<br>
+Git stocke les options de configuration dans trois fichiers distincts, ce qui vous permet d'étendre les options à des référentiels individuels (local), à un utilisateur (global) ou à l'ensemble du système (système) :
